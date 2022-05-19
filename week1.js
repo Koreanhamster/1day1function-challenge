@@ -33,7 +33,7 @@
 // console.log(multiflyAll(4, 12));
 
 //5.17
-//[22,456,785,23,90]중에서 최솟값 구하기
+//3. [22,456,785,23,90]중에서 최솟값 구하기
 function getMin(array) {
   let output = array[0];
   for (let item of array) {
@@ -48,7 +48,7 @@ const myArray = [22, 456, 785, 23, 90];
 // console.log(`${myArray}중 가장 작은 숫자는 ${getMin(myArray)}`);
 
 //5.18
-//가격낮은순으로 쏠팅하기
+//4. 가격낮은순으로 쏠팅하기
 
 let products = [
   { id: 0, price: 70000, title: 'Blossom Dress' },
@@ -66,3 +66,41 @@ let lowToHigh = function () {
 };
 
 lowToHigh();
+
+//title의 정렬도 시도해보기
+let stringOrder = function () {
+  products.sort(function (a, b) {
+    if (a.title < b.title) {
+      return -1;
+    } else if (a.title > b.title) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  console.log(products);
+};
+
+stringOrder();
+
+//5월 19일
+//369게임
+
+function 삼육구(a) {
+  //마지막숫자가 3,6,9로 끝나면 박수를 치고싶었다.
+  //마지막숫자를 구하려면 일단 a를 문자열로 바꿔주자.
+  let numbers = a.toString();
+  if (
+    //문자열.charAt메소드는 문자열에서 원하는 인덱스에 있는 문자를 돌려준다고 한다. 새로배움
+    //원래 string.charAt(0)형태로 치면 처음부터 요소를 뽑아주지만
+    //내가 원하는건 맨 마지막 문자의 인덱스를 가져고오고싶기 때문에 string.charAt(string.length -1)형태로 써야한다.
+    numbers.charAt(numbers.length - 1) == 3 ||
+    numbers.charAt(numbers.length - 1) == 6 ||
+    numbers.charAt(numbers.length - 1) == 9
+  ) {
+    console.log('박수쳐');
+  }
+}
+
+삼육구(16);
+삼육구(3);
