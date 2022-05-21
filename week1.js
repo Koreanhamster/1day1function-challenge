@@ -44,7 +44,7 @@ function getMin(array) {
   return output;
 }
 
-const myArray = [22, 456, 785, 23, 90];
+// const myArray = [22, 456, 785, 23, 90];
 // console.log(`${myArray}중 가장 작은 숫자는 ${getMin(myArray)}`);
 
 //5.18
@@ -65,7 +65,7 @@ let lowToHigh = function () {
   console.log(products);
 };
 
-lowToHigh();
+// lowToHigh();
 
 //title의 정렬도 시도해보기
 let stringOrder = function () {
@@ -81,7 +81,7 @@ let stringOrder = function () {
   console.log(products);
 };
 
-stringOrder();
+// stringOrder();
 
 //5월 19일
 //369게임
@@ -102,8 +102,8 @@ function 삼육구(a) {
   }
 }
 
-삼육구(16);
-삼육구(3);
+// 삼육구(16);
+// 삼육구(3);
 
 //합격판독기
 
@@ -122,9 +122,25 @@ function 그래서몇점인데(a, b) {
   }
 }
 
-그래서몇점인데(70, 70);
-그래서몇점인데(30, 100);
-그래서몇점인데(50, 50);
-그래서몇점인데(-10, 50);
-그래서몇점인데(120, 50);
-그래서몇점인데(70, 90);
+// 그래서몇점인데(70, 70);
+// 그래서몇점인데(30, 100);
+// 그래서몇점인데(50, 50);
+// 그래서몇점인데(-10, 50);
+// 그래서몇점인데(120, 50);
+// 그래서몇점인데(70, 90);
+
+//5.20
+//정규식으로 이메일형식 검사하기
+//알파벳@알파벳.알파벳 형식
+
+let input = function (email) {
+  if (/\S+@\S+\.\S+/.test(email) === false) {
+    console.log('유효한 이메일 아님');
+  } else {
+    console.log('유효합니다이!!');
+  }
+};
+
+input('ddd');
+input('ddd@ss');
+input('ddd@ddd.sss');
