@@ -86,23 +86,21 @@ let stringOrder = function () {
 //5월 19일
 //369게임
 
-function 삼육구(a) {
-  //마지막숫자가 3,6,9로 끝나면 박수를 치고싶었다.
-  //마지막숫자를 구하려면 일단 a를 문자열로 바꿔주자.
-  let numbers = a.toString();
-  if (
-    //문자열.charAt메소드는 문자열에서 원하는 인덱스에 있는 문자를 돌려준다고 한다. 새로배움
-    //원래 string.charAt(0)형태로 치면 처음부터 요소를 뽑아주지만
-    //내가 원하는건 맨 마지막 문자의 인덱스를 가져고오고싶기 때문에 string.charAt(string.length -1)형태로 써야한다.
-    numbers.charAt(numbers.length - 1) == 3 ||
-    numbers.charAt(numbers.length - 1) == 6 ||
-    numbers.charAt(numbers.length - 1) == 9
-  ) {
-    console.log('박수쳐');
+function 삼육구(number) {
+  let nums = number.toString().split('');
+  let clap = [];
+
+  for (let num of nums) {
+    if (num === '3' || num === '6' || num === '9') {
+      clap.push('짝👏');
+    }
   }
+  return clap;
 }
 
-// 삼육구(16);
+console.log(삼육구(369));
+console.log(삼육구(336699));
+console.log(삼육구(12));
 // 삼육구(3);
 
 //합격판독기
