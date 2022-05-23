@@ -10,7 +10,7 @@
 // let count = 5;
 
 // setInterval(function () {
-//   count -= 1;
+//   count--;
 //   if (count >= 0) {
 //     time.textContent = count;
 //   }
