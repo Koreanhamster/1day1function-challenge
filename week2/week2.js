@@ -1,10 +1,9 @@
 //5.23
 //Dom - 5초부터 1초까지 세고 사라지는 알럿창 만들기
-{
-  /* <div class="alert alert-danger" id="alert">
+
+/* <div class="alert alert-danger" id="alert">
 5<초 이내 구매시 사은품 증정
 </div> */
-}
 
 // const alert = document.querySelector('#alert');
 // const time = document.querySelector('#time');
@@ -22,8 +21,8 @@
 // }, 1000);
 
 // 5.24 퀴즈판독기
-{
-  /* <body>
+
+/* <body>
   <p>태조 이성계가 태어난 연도는?</p>
   <input type="text" id="answer" />
   <button id="send-answer" type="submit">제출</button>
@@ -47,4 +46,23 @@
     });
   </script>
 </body> */
+
+//5.26
+// 할인가 계산기
+// 소숫점 2자리에서 끊기
+// 값은 type이 number여야함
+
+function cal(a, b) {
+  let discount = a * 0.1;
+  if (b == false) {
+    let output = a - discount;
+    return parseFloat(output.toFixed(2));
+  } else if (b == true) {
+    let output = a - discount - 1.5;
+    return parseFloat(output.toFixed(2));
+  }
 }
+
+console.log(typeof cal(70, false));
+console.log(cal(70, false));
+console.log(cal(10.3, true));
