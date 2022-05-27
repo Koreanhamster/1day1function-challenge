@@ -52,17 +52,39 @@
 // 소숫점 2자리에서 끊기
 // 값은 type이 number여야함
 
-function cal(a, b) {
-  let discount = a * 0.1;
-  if (b == false) {
-    let output = a - discount;
-    return parseFloat(output.toFixed(2));
-  } else if (b == true) {
-    let output = a - discount - 1.5;
-    return parseFloat(output.toFixed(2));
+// function cal(a, b) {
+//   let discount = a * 0.1;
+//   if (b == false) {
+//     let output = a - discount;
+//     return parseFloat(output.toFixed(2));
+//   } else if (b == true) {
+//     let output = a - discount - 1.5;
+//     return parseFloat(output.toFixed(2));
+//   }
+// }
+
+// console.log(typeof cal(70, false));
+// console.log(cal(70, false));
+// console.log(cal(10.3, true));
+
+//5.27
+// 소수판별
+// 소수이면 Yes, 아니면 No로 출력하세요.
+
+function checkPrime(n) {
+  for (i = 2; i < n; i++) {
+    if (n % i === 0) {
+      console.log('소수아님');
+      return false;
+    }
   }
+
+  if (n === 1) {
+    console.log('소수아님');
+    return false;
+  }
+  console.log('소수임');
 }
 
-console.log(typeof cal(70, false));
-console.log(cal(70, false));
-console.log(cal(10.3, true));
+checkPrime(10);
+checkPrime(10.5);
