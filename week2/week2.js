@@ -47,8 +47,8 @@
   </script>
 </body> */
 
-//5.26
-// 할인가 계산기
+// 5.26
+// 할인가 계산기 (10프로 할인, 첫구매면 10프로 + 1.5달러 추가할인 )
 // 소숫점 2자리에서 끊기
 // 값은 type이 number여야함
 
@@ -67,9 +67,17 @@
 // console.log(cal(70, false));
 // console.log(cal(10.3, true));
 
+function cal(가격, 첫구매인가요) {
+  let discount = 가격 * 0.1;
+  if (첫구매인가요 == false) {
+    let output = a - discount;
+    return parseFloat(output.toFixed(2));
+  } else if (첫구매인가요 == true) {
+  }
+}
+
 //5.27
 // 소수판별
-// 소수이면 Yes, 아니면 No로 출력하세요.
 
 function checkPrime(n) {
   for (i = 2; i < n; i++) {
@@ -87,4 +95,4 @@ function checkPrime(n) {
 }
 
 checkPrime(10);
-checkPrime(10.5);
+checkPrime(7);
