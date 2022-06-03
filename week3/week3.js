@@ -35,18 +35,18 @@
 
 //평균점수 계산기 만들기
 
-function 함수(arr, b) {
-  var result = 0;
-
+function cal(arr, b) {
+  let result = 0;
   for (let i = 0; i < arr.length; i++) {
     result = result + arr[i];
   }
 
-  if (result / arr.length < b) {
-    console.log(`${b - result / arr.length}만큼 올랐네요`);
+  if (result / arr.length > b) {
+    console.log(`${result / arr.length - b}만큼 떨어졌네요! 아쉽`);
   } else {
-    console.log(`${result / arr.length - b}만큼 떨어졌네요`);
+    console.log(`${b - result / arr.length}만큼 올랐네요! 축하`);
   }
 }
 
-함수([20, 30, 40], 20);
+cal([20, 30, 40], 20);
+cal([40, 60, 80, 96], 76);
