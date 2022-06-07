@@ -10,4 +10,5 @@ function checkDay(a, b) {
   console.log(day[theDay.getDay()]);
 }
 
-checkDay(a, b);
+checkDay(6, 7);
+checkDay(6, 8);

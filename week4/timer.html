@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><span id="time">0</span>초</h1>
+    <button id="btn-five">5초+</button>
+    <button id="btn-start">시작</button>
+    <script>
+      //5초 버튼을 누르면 초가 5초씩 늘어나야 함
+      //시작버튼을 누르면 타이머 재생
+
+      let btnFive = document.querySelector('#btn-five');
+      let time = document.querySelector('#time');
+      let btnStart = document.querySelector('#btn-start');
+      let count = 0;
+
+      btnFive.addEventListener('click', function () {
+        count = count + 5;
+        console.log(count);
+        time.innerHTML = count;
+      });
+
+      btnStart.addEventListener('click', function () {
+        let timer;
+
+        timer = setInterval(function () {
+          count--;
+          time.innerHTML = count;
+
+          if (count < 1) {
+            clearInterval(timer);
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
