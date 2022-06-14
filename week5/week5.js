@@ -32,10 +32,51 @@
 //원본배열을 지우는것임!
 // console.log(arraySplice);
 
-// const arraySlice = [1, 2, 3, 4, 5];
+const arraySlice = [1, 2, 3, 4, 5];
 //Returns a copy of a section of an array. (카피한 섹션을 리턴한다)
 //This is exclusive of the element at the index 'end' (end파라미터는 배제된다)
-// const resultSlice = arraySlice.slice(2, 5);
+const resultSlice = arraySlice.slice(2, 5);
 // console.log(resultSlice);
 //원본배열은 바뀌지 않았다
 // console.log(arraySlice);
+
+class Student {
+  constructor(name, age, enrolled, score) {
+    this.name = name;
+    this.age = age;
+    this.enrolled = enrolled;
+    this.score = score;
+  }
+}
+
+const students = [
+  new Student('A', 29, true, 45),
+  new Student('B', 28, false, 80),
+  new Student('C', 30, true, 90),
+  new Student('D', 18, true, 66),
+  new Student('E', 18, true, 88),
+];
+
+// 05. find a student with the score 90
+const findStudent = students.find((student) => {
+  return student.score === 90;
+});
+// console.log(findStudent);
+
+// 06. make an array of enrolled studends
+const enrolled = students.filter((student) => {
+  return student.enrolled === true;
+});
+// console.log(enrolled);
+
+// 07. make an array containing only the students' scores result sould be : [45, 80, 90, 66, 88]
+const containing = students.map((student) => {
+  return student.score;
+});
+// console.log(containing);
+
+// 08. check if there is a student with the score lower than 50
+const lower = students.some((student) => {
+  return student.score < 50;
+});
+// console.log(lower);
