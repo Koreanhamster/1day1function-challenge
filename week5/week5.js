@@ -32,10 +32,10 @@
 //원본배열을 지우는것임!
 // console.log(arraySplice);
 
-const arraySlice = [1, 2, 3, 4, 5];
+// const arraySlice = [1, 2, 3, 4, 5];
 //Returns a copy of a section of an array. (카피한 섹션을 리턴한다)
 //This is exclusive of the element at the index 'end' (end파라미터는 배제된다)
-const resultSlice = arraySlice.slice(2, 5);
+// const resultSlice = arraySlice.slice(2, 5);
 // console.log(resultSlice);
 //원본배열은 바뀌지 않았다
 // console.log(arraySlice);
@@ -58,25 +58,52 @@ const students = [
 ];
 
 // 05. find a student with the score 90
-const findStudent = students.find((student) => {
-  return student.score === 90;
-});
+// const findStudent = students.find((student) => {
+//   return student.score === 90;
+// });
 // console.log(findStudent);
 
 // 06. make an array of enrolled studends
-const enrolled = students.filter((student) => {
-  return student.enrolled === true;
-});
+// const enrolled = students.filter((student) => {
+//   return student.enrolled === true;
+// });
 // console.log(enrolled);
 
 // 07. make an array containing only the students' scores result sould be : [45, 80, 90, 66, 88]
-const containing = students.map((student) => {
-  return student.score;
-});
+// const containing = students.map((student) => {
+//   return student.score;
+// });
 // console.log(containing);
 
 // 08. check if there is a student with the score lower than 50
-const lower = students.some((student) => {
-  return student.score < 50;
-});
+// const lower = students.some((student) => {
+//   return student.score < 50;
+// });
 // console.log(lower);
+
+//09. compute student's average score
+const average = students.reduce((prev, curr) => {
+  return prev + curr.score;
+}, 0);
+console.log(average / students.length);
+
+//10. make a string containin all the scores
+// result should be: '45, 80, 90, 66, 88'
+const makeString = students.map((student) => student.score).join();
+console.log(makeString);
+
+//위 문제에서 string을 만들긴 만드는데 점수가 50점 이상인 애들로만 만들어보세요
+const makeString2 = students
+  .map((student) => student.score)
+  .filter((score) => score >= 50)
+  .join();
+
+console.log(makeString2);
+
+// do Q.10 sorted in asending order and make it a string
+// result should be: '45, 66, 80, 88, 90'
+const asending = students
+  .map((student) => student.score)
+  .sort((a, b) => a - b)
+  .join();
+console.log(asending);
