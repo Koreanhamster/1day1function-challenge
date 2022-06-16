@@ -85,12 +85,23 @@ const students = [
 const average = students.reduce((prev, curr) => {
   return prev + curr.score;
 }, 0);
-console.log(average / students.length);
+// console.log(average / students.length);
 
 //10. make a string containin all the scores
 // result should be: '45, 80, 90, 66, 88'
 const makeString = students.map((student) => student.score).join();
-console.log(makeString);
+// console.log(makeString);
+
+//헷갈렸던거. students.score 자체에 join을 붙으면 당연히 먹지않는다.
+// 왜? join은 배열에 붙는애고 score자체는 그냥 숫자니까!
+const makeStringTest = students.map((students) => {
+  return students.score;
+});
+// console.log(makeStringTest);
+console.log(makeStringTest);
+
+const getScore = students.map((student) => student.score);
+// console.log(getScore.join());
 
 //위 문제에서 string을 만들긴 만드는데 점수가 50점 이상인 애들로만 만들어보세요
 const makeString2 = students
@@ -98,7 +109,7 @@ const makeString2 = students
   .filter((score) => score >= 50)
   .join();
 
-console.log(makeString2);
+// console.log(makeString2);
 
 // do Q.10 sorted in asending order and make it a string
 // result should be: '45, 66, 80, 88, 90'
@@ -106,4 +117,18 @@ const asending = students
   .map((student) => student.score)
   .sort((a, b) => a - b)
   .join();
-console.log(asending);
+// console.log(asending);
+
+const word = prompt('querty');
+
+// function replaceAll(str, searchStr, replaceStr) {
+//   return str.split(searchStr).join(replaceStr);
+// }
+
+// console.log(replaceAll(word, 'q', 'e'));
+
+function replaceAll(str, searchStr, reaplaceStr) {
+  console.log(str);
+}
+
+console.log(replaceAll('querty', 'q', 'e'));
