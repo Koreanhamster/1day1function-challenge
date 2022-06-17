@@ -119,16 +119,27 @@ const asending = students
   .join();
 // console.log(asending);
 
-const word = prompt('querty');
+/**
+ * *Falsy인 깂
+ * 0
+ * -0
+ * null
+ * NaN
+ * undefined
+ * ''
+ */
 
-// function replaceAll(str, searchStr, replaceStr) {
-//   return str.split(searchStr).join(replaceStr);
-// }
+/**
+ *Truthy인 값
+ *{}
+ *1
+ *-1
+ *'0' 문자열은 true
+ *'false' 이것도 문자열이니까 true
+ *[]
+ */
 
-// console.log(replaceAll(word, 'q', 'e'));
-
-function replaceAll(str, searchStr, reaplaceStr) {
-  console.log(str);
+const check = null;
+if (check) {
+  console.log('true일때만 출력');
 }
-
-console.log(replaceAll('querty', 'q', 'e'));
