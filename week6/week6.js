@@ -33,18 +33,18 @@ console.log(학생3.sayHi());
 
 // 'http://test.api.weniv.co.kr/mall'
 
-import axios from 'axios';
-import React from 'react';
+// import axios from 'axios';
+// import React from 'react';
 
-function Product() {
-  const url = 'http://test.api.weniv.co.kr/mall';
-  axios.get(url).then((res) => console.log(res.data[0].productName));
+// function Product() {
+//   const url = 'http://test.api.weniv.co.kr/mall';
+//   axios.get(url).then((res) => console.log(res.data[0].productName));
 
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => console.log(data[1].productName));
+//   fetch(url)
+//     .then((res) => res.json())
+//     .then((data) => console.log(data[1].productName));
 
-  return <div></div>;
-}
+//   return <div></div>;
+// }
 
-export default Product;
+// export default Product;
