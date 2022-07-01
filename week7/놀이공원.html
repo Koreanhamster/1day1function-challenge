@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let total = 0;
+      let count = 0;
+      const limit = prompt('제한 몸무게를 알려주세요');
+      const n = prompt('친구가 몇 명인가요?');
+
+      for (let i = 0; i < n; i++) {
+        total += parseInt(prompt('몸무게를 알려주세요'), 10);
+        if (total <= limit) {
+          count = i + 1;
+        }
+      }
+
+      console.log(`${count}명만 입장 가능! 🏰`);
+
+      // 처음 내가 한 실수
+      // total과 count는 변수인데 const로 선언해서 계속 오류가 났다.
+      // total <= limit 부등호 방향 헷갈림
+    </script>
+  </body>
+</html>
