@@ -12,3 +12,18 @@ const promise = new Promise((resolve,reject)=>{
 promise
 .then(()=>{console.log('success')})
 .catch(()=>{console.log('something went wrong')})
+
+const fs = require('fs');
+
+async function loadFile(){
+  try {
+    const data = await fs.promises.readFile('./test.txt',{encoding: 'utf-8'});
+    console.log(data);
+  } catch (error) {
+    console.error(error)
+  } finally {
+    console.log('마침내')
+  }
+}
+
+loadFile();
